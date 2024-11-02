@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Furniture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Sell Your Furniture</h1>
+        <button onclick="window.location.href='index.html'" class="home-btn">Home</button>
+    </header>
+    <form id="sell-form">
+        <label for="name">Furniture Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="type">Type:</label>
+        <select id="type" required>
+            <option value="Sofa">Sofa</option>
+            <option value="Bed">Bed</option>
+            <option value="Table">Table</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" required>
+
+        <label for="condition">Condition:</label>
+        <select id="condition" required>
+            <option value="New">New</option>
+            <option value="Old">Old</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" required>
+
+        <label for="contact">Email:</label>
+        <input type="email" id="contact" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" accept="image/*" required>
+
+        <button type="submit">Add Furniture</button>
+    </form>
+
+    <script type="module">
+        document.getElementById('sell-form').addEventListener('submit', function(event) {
+            // Basic validation can be added here if needed
+            const fileInput = document.getElementById('image');
+            const fileSizeLimit = 2 * 1024 * 1024; // 2MB limit
+
+            if (fileInput.files[0] && fileInput.files[0].size > fileSizeLimit) {
+                alert("File size exceeds 2MB. Please upload a smaller image.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Furniture Marketplace</h1>
+        <button onclick="window.location.href='sell.html'" class="sell-btn">Sell</button>
+    </header>
+    <section id="filter">
+        <input type="text" id="filter-location" placeholder="Location">
+        <input type="number" id="filter-price-min" placeholder="Min Price" min="0">
+        <input type="number" id="filter-price-max" placeholder="Max Price" min="0">
+        <select id="filter-type">
+            <option value="">Type</option>
+            <option value="Sofa">Sofa</option>
+            <option value="Bed">Bed</option>
+            <option value="Table">Table</option>
+        </select>
+        <select id="filter-condition">
+            <option value="">Condition</option>
+            <option value="New">New</option>
+            <option value="Old">Old</option>
+        </select>
+        <button id="filter-btn">Apply Filters</button>
+    </section>
+    <section id="furniture-list"></section>
+
+    <!-- Modal for Furniture Details -->
+    <div id="furniture-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="" alt="Furniture Image">
+            <h2 id="modal-name"></h2>
+            <p id="modal-type"></p>
+            <p id="modal-price"></p>
+            <p id="modal-location"></p>
+            <p id="modal-condition"></p>
+            <p id="modal-contact"></p>
+            <p id="modal-phone"></p>
+        </div>
+    </div>
+
+    <footer>&copy; 2024 Furniture Marketplace. All rights reserved.</footer>
+</body>
+</html>
